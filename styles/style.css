@@ -11,6 +11,294 @@
 */
 
 .page {
+  font-family: var(--main-font);
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-image: var(--background);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  background-color: var(--main-bg-color);
+  border: 2px solid #000000;
+  width: var(--main-width);
+  font-family: var(--accent-font);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(120px, calc(116.479px + 0.939vw), 128px)
+    clamp(16px, calc(-21.5px + 10vw), 120px);
+  margin: 100px 0px;
+}
+.header-logo {
+  font-weight: 400;
+  font-size: clamp(49px, 10vw, 65px);
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+.header-title {
+  font-weight: 400;
+  font-size: clamp(14px, 3vw, 23px);
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 49px;
+}
+.card {
+  width: var(--main-width);
+  background-color: var(--main-bg-color);
+  border: 2px solid #000000;
+  display: grid;
+}
+.card-title {
+  font-weight: 715;
+  font-size: 18px;
+  letter-spacing: 0%;
+  padding: 5px 12px 5px;
+}
+.label {
+  font-family: var(--accent-font);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  filter: opacity(0.5);
+  text-shadow:
+    -1px 0 #ffffff,
+    0 1px #ffffff,
+    1px 0 #ffffff,
+    0 -1px #ffffff;
+  position: absolute;
+  mix-blend-mode: hard-light;
+  top: 25px;
+  left: clamp(250px, calc(135.563px + 30.516vw), 575px);
+}
+@supports ((text-stroke: 1px #ffffff) or (-webkit-text-stroke: 1px #ffffff)) {
+  .label {
+    -webkit-text-stroke: 1px #ffffff;
+    text-stroke: 1px #ffffff;
+    text-shadow: none;
+  }
+}
+.image-cover {
+  position: relative;
+}
+
+.card-image {
+  width: clamp(375px, calc(256.563px + 30.516vw), 696px);
+  height: clamp(375px, calc(256.563px + 30.516vw), 696px);
+}
+.card-text {
+  padding: clamp(21px, calc(18.944px + 0.282vw), 23px) 27px 25px;
+  font-weight: 410;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.button-cover {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 26px 21px;
+}
+
+.button__text {
+  font-family: var(--accent-font);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 90%;
+}
+.card__like-button {
+  border: 2px solid #000000;
+  padding: 9px 35px;
+  background-color: transparent;
+  max-block-size: 38px;
+}
+
+.card__icon-button {
+  border: none;
+  background-color: transparent;
+}
+.svg-save {
+  block-size: 28px;
+  inline-size: 28px;
+}
+.save-button {
+  background-color: var(--main-bg-color);
+  border: 2px solid #000000;
+  padding: 17px 20px;
+  inline-size: clamp(306px, calc(295.455px + 3.295vw), 335px);
+  align-self: center;
+  margin-top: 2px;
+  margin-bottom: 60px;
+}
+.card-save-button {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  gap: 8px;
+  align-items: center;
+}
+.button {
+  position: relative;
+}
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 0 #000000;
+  transition: 0.3s ease;
+}
+.button::before {
+  content: " ";
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.5s ease-in-out;
+}
+.button:hover::before {
+  transform: scaleX(1);
+  background-color: var(--main-bg-color);
+  color: var(--main-bg-color);
+  mix-blend-mode: difference;
+}
+.core {
+  transition: 0.3s linear 0.03s;
+}
+.like-icon:hover .core {
+  fill: var(--contour-color);
+  transition: 0.3s linear 0s;
+}
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition: 0.3s linear 0s;
+}
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition: 0.3s linear 0s;
+}
+.contour {
+  transition: 0.1s linear 0s;
+}
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: 0.3s linear 0.06s;
+}
+.main-body {
+  fill: transparent;
+  transition: 0.3s linear 0s;
+}
+.like-icon:hover .main-body {
+  fill: var(--contour-color);
+  transition: 0.3s linear 0.05s;
+}
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+  transition: 0.3s linear 0.05s;
+}
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition: 0.3s linear 0.05s;
+}
+.sparks {
+  opacity: 0;
+}
+.like-icon {
+  transform-origin: center;
+}
+.like-icon.is-liked .heart {
+  animation: heart 0.3s ease-in 0.1s;
+}
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s ease-in 0.3s;
+}
+.card__icon-button:focus {
+  outline: none;
+}
+.card__icon-button:focus-visible {
+  box-shadow: 0 0 0 2px #000000;
+  transition: 0.3s ease;
+}
+#continue {
+  display: none;
+}
+
+#continue[open] {
+  width: clamp(341px, calc(336.775px + 1.127vw), 353px);
+  min-width: none;
+  max-width: none;
+  height: 191px;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 20px;
+  justify-content: center;
+  align-content: center;
+  padding: 27px 37px;
+}
+.continue-text {
+  font-family: var(--accent-font);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.svg-continue {
+  inline-size: 39px;
+  block-size: 39px;
+  margin-top: 10px;
+}
+.ok-button {
+  grid-column: span 2;
+  background-color: transparent;
+  width: clamp(261px, calc(249.732px + 3.005vw), 293px);
+  height: 38px;
+}
+#continue[open]::backdrop {
+  background-color: #000000;
+  filter: opacity(75%);
+}
+@media (width >= 1440px) {
+  .main {
+    gap: 50px;
+  }
+  .card {
+    padding-bottom: 2px;
+  }
+  .card-title {
+    padding: 4.5px 10px;
+  }
+  .card-save-button {
+    flex-direction: row;
+  }
+  .svg-save {
+    block-size: 21px;
+    inline-size: 21px;
+  }
+  .save-button {
+    padding: 13px 20px;
+  }
+  #continue[open] {
+    padding: 27px;
+  }
 }
