@@ -86,6 +86,7 @@
   mix-blend-mode: hard-light;
   top: 25px;
   left: clamp(250px, calc(135.563px + 30.516vw), 575px);
+  z-index: 1;
 }
 @supports ((text-stroke: 1px #ffffff) or (-webkit-text-stroke: 1px #ffffff)) {
   .label {
