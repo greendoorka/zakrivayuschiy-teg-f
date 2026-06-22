@@ -102,25 +102,25 @@
   width: clamp(375px, calc(256.563px + 30.516vw), 696px);
   height: clamp(375px, calc(256.563px + 30.516vw), 696px);
 }
-.one{
+.one {
   filter: grayscale(70%);
 }
-.two{
+.two {
   filter: hue-rotate(180deg);
 }
-.three{
+.three {
   filter: sepia(0.7) blur(3px) ;
 }
-.four{
+.four {
   filter: contrast(3);
 }
-.five{
+.five {
   filter:invert(0.9) ;
 }
-.six{
+.six {
   filter: hue-rotate(90deg) saturate(198%) ;
 }
-.seven{
+.seven {
   filter: brightness(200%)  ;
 }
 
@@ -169,14 +169,13 @@
   align-self: center;
   margin-top: 2px;
   margin-bottom: 60px;
-}
-.card-save-button {
   display: flex;
   flex-direction: column;
   white-space: nowrap;
   gap: 8px;
   align-items: center;
 }
+
 .button {
   position: relative;
 }
