@@ -38,12 +38,14 @@
     clamp(16px, calc(-21.5px + 10vw), 120px);
   margin: 100px 0px;
 }
+
 .header-logo {
   font-weight: 400;
   font-size: clamp(49px, 10vw, 65px);
   line-height: 100%;
   text-transform: uppercase;
 }
+
 .header-title {
   font-weight: 400;
   font-size: clamp(14px, 3vw, 23px);
@@ -56,17 +58,20 @@
   flex-direction: column;
   gap: 49px;
 }
+
 .card {
   width: var(--main-width);
   background-color: var(--main-bg-color);
   border: 2px solid var(--main-color);
   display: grid;
 }
+
 .card-title {
   font-variation-settings: "wght" 715;
   font-size: 18px;
   padding: 5.5px 12px 5px;
 }
+
 .label {
   font-family: var(--accent-font), fantasy;
   font-weight: 400;
@@ -85,6 +90,7 @@
   left: clamp(250px, calc(135.563px + 30.516vw), 575px);
   z-index: 1;
 }
+
 @supports ((text-stroke: 1px #ffffff) or (-webkit-text-stroke: 1px #ffffff)) {
   .label {
     -webkit-text-stroke: 1px var(--main-bg-color);
@@ -92,6 +98,7 @@
     text-shadow: none;
   }
 }
+
 .image-cover {
   position: relative;
   outline: 2px solid var(--main-color);
@@ -103,24 +110,31 @@
   width: 100%;
   height: 100%;
 }
+
 .beginning {
   filter: grayscale(70%);
 }
+
 .start {
   filter: hue-rotate(180deg);
 }
+
 .what-if {
   filter: sepia(0.7) blur(3px);
 }
+
 .run {
   filter: contrast(3);
 }
+
 .about {
   filter: invert(0.9);
 }
+
 .strategy {
   filter: hue-rotate(90deg) saturate(198%);
 }
+
 .motivation {
   filter: brightness(200%);
 }
@@ -131,6 +145,7 @@
   font-size: 18px;
   line-height: 21px;
 }
+
 .button-cover {
   display: flex;
   justify-content: flex-end;
@@ -142,6 +157,7 @@
   font-size: 14px;
   line-height: 90%;
 }
+
 .card__like-button {
   inline-size: 130px;
   block-size: 38px;
@@ -151,10 +167,12 @@
   border: none;
   background-color: transparent;
 }
+
 .svg-save {
   block-size: 28px;
   inline-size: 28px;
 }
+
 .save-button {
   padding: 17px 20px;
   inline-size: clamp(306px, calc(295.455px + 3.295vw), 335px);
@@ -174,11 +192,13 @@
   border: 2px solid var(--main-color);
   background-color: var(--main-bg-color);
 }
+
 .button:focus {
   outline: none;
   box-shadow: 2px 2px 0 0 var(--main-color);
   transition: 0.3s ease;
 }
+
 .button::before {
   content: " ";
   top: 0;
@@ -193,49 +213,61 @@
   background-color: var(--main-bg-color);
   color: var(--main-bg-color);
 }
+
 .button:hover::before {
   transform: scaleX(1);
 }
+
 .core {
   transition: 0.3s linear 0.03s;
   transform-origin: center;
 }
+
 .like-icon:hover .core {
   fill: var(--contour-color);
   transition: 0.3s linear 0s;
 }
+
 .like-icon:active .core {
   fill: var(--animation-fill-color);
   transition: 0.3s linear 0s;
 }
+
 .like-icon.is-liked .core {
   fill: var(--animation-fill-color);
   transition: 0.3s linear 0s;
 }
+
 .contour {
   transition: 0.1s linear 0s;
   transform-origin: center;
 }
+
 .like-icon.is-liked .contour {
   fill: var(--animation-fill-color);
   transition: 0.3s linear 0.06s;
 }
+
 .main-body {
   fill: transparent;
   transition: 0.3s linear 0s;
 }
+
 .like-icon:hover .main-body {
   fill: var(--contour-color);
   transition: 0.3s linear 0.05s;
 }
+
 .like-icon:active .main-body {
   fill: var(--animation-fill-color);
   transition: 0.3s linear 0.05s;
 }
+
 .like-icon.is-liked .main-body {
   fill: var(--animation-fill-color);
   transition: 0.3s linear 0.05s;
 }
+
 .sparks {
   opacity: 0;
   transform-origin: center;
@@ -248,16 +280,20 @@
 .like-icon.is-liked .heart {
   animation: heart 0.3s ease-in 0.1s;
 }
+
 .like-icon.is-liked .sparks {
   animation: sparks 0.3s ease-in 0.3s;
 }
+
 .card__icon-button:focus {
   outline: none;
 }
+
 .card__icon-button:focus-visible {
   box-shadow: 0 0 0 2px var(--main-color);
   transition: 0.3s ease;
 }
+
 #continue {
   display: none;
 }
@@ -271,6 +307,7 @@
   align-content: center;
   padding: 27px 37px;
 }
+
 .continue-text {
   font-family: var(--accent-font), fantasy;
   font-weight: 400;
@@ -279,40 +316,47 @@
   text-transform: uppercase;
   margin-bottom: 10px;
 }
+
 .svg-continue {
   inline-size: 39px;
   block-size: 39px;
   margin-top: 10px;
 }
+
 .ok-button {
   grid-column: span 2;
   width: clamp(261px, calc(249.732px + 3.005vw), 293px);
   padding: 9px 0;
 }
+
 #continue[open]::backdrop {
   background-color: var(--main-color);
   filter: opacity(75%);
 }
+
 @media (width >= 1440px) {
   .main {
     gap: 50px;
   }
+
   .card {
     padding-bottom: 5px;
   }
+
   .card-title {
     padding: 4.5px 10px;
   }
+
   .save-button {
     flex-direction: row;
+    padding: 13px 20px;
   }
+
   .svg-save {
     block-size: 21px;
     inline-size: 21px;
   }
-  .save-button {
-    padding: 13px 20px;
-  }
+
   #continue[open] {
     padding: 24px 27px;
   }
